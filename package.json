@@ -2,7 +2,7 @@
   "name": "seneca-auth-token-cookie",
   "version": "0.2.0",
   "description": "Seneca plugin for storing auth token as cookie",
-  "main": "mvp-app.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
