@@ -10,7 +10,7 @@ module.exports = function ( options ) {
     var res       = args.res
     var req       = args.req
 
-    res.cookies.set( tokenkey, token )
+    res.seneca.cookies.set( tokenkey, token )
 
     cb(null, {token: token})
   })
@@ -19,7 +19,7 @@ module.exports = function ( options ) {
     var tokenkey  = args.tokenkey
     var res       = args.res
     var req       = args.req
-    cb(null, {token: req.cookies.get( tokenkey )})
+    cb(null, {token: req.seneca.cookies.get( tokenkey )})
   })
 
   return {
