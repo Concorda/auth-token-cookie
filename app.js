@@ -2,7 +2,7 @@
 
 module.exports = function ( options ) {
   var seneca = this
-  var plugin = 'auth-auth-toke-plugin'
+  var plugin = 'seneca-auth-token-plugin'
 
   seneca.add({role: 'token', cmd: 'set'}, function(args, cb){
     var tokenkey  = args.tokenkey
