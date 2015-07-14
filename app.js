@@ -7,7 +7,7 @@ module.exports = function ( options ) {
   function setToken(args, cb){
     var tokenkey  = args.tokenkey
     var token     = args.token
-    var res       = seneca.res$
+    var res       = args.res
 
     res.seneca.cookies.set( tokenkey, token )
 
@@ -16,7 +16,7 @@ module.exports = function ( options ) {
 
   function getToken(args, cb){
     var tokenkey  = args.tokenkey
-    var req       = seneca.req$
+    var req       = args.req
     cb(null, {token: req.seneca.cookies.get( tokenkey )})
   }
 
