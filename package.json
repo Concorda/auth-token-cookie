@@ -10,14 +10,22 @@
     "type": "git",
     "url": "https://github.com/mirceaalexandru/seneca-auth-token-cookie"
   },
+  "files": [
+    "LICENSE.txt",
+    "README.md",
+    "app.js",
+    "default-options.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/mirceaalexandru/seneca-auth-token-cookie/issues"
+  },
   "author": {
     "name": "Mircea Alexandru",
-    "email": "mircea.alexandru@gmail.com",
-    "url": "https://github.com/mirceaalexandru"
+    "email":"mircea.alexandru@gmail.com",
+    "url" : "https://github.com/mirceaalexandru"
   },
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
-    "lodash": "^3.10.0"
   }
 }
