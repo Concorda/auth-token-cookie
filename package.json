@@ -13,7 +13,8 @@
   "files": [
     "LICENSE.txt",
     "README.md",
-    "app.js"
+    "app.js",
+    "default-options.js"
   ],
   "bugs": {
     "url": "https://github.com/mirceaalexandru/seneca-auth-token-cookie/issues"
