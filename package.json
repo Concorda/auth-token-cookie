@@ -1,6 +1,6 @@
 {
   "name": "seneca-auth-token-cookie",
-  "version": "0.2.0",
+  "version": "0.0.1",
   "description": "Seneca plugin for storing auth token as cookie",
   "main": "app.js",
   "scripts": {
@@ -10,6 +10,12 @@
     "type": "git",
     "url": "https://github.com/mirceaalexandru/seneca-auth-token-cookie"
   },
+  "keywords": [
+    "seneca",
+    "auth",
+    "plugin",
+    "cookie"
+  ],
   "files": [
     "LICENSE.txt",
     "README.md",
@@ -24,6 +30,7 @@
     "email":"mircea.alexandru@gmail.com",
     "url" : "https://github.com/mirceaalexandru"
   },
+  "homepage": "https://github.com/mirceaalexandru/seneca-auth-token-cookie",
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
