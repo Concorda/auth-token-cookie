@@ -7,7 +7,8 @@ var Cookies       = require('cookies')
 // default configuration
 var default_options = require('./default-options.js')
 
-module.exports = function ( seneca, options ) {
+module.exports = function ( options ) {
+  var seneca = this
 
   options = _.extend({}, default_options, options || {})
 
