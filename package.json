@@ -4,7 +4,7 @@
   "description": "Seneca MODULE for storing auth token as cookie",
   "main": "token-cookie.js",
   "scripts": {
-    "test": "lab test/*.test.js -r console -v -L -t 80"
+    "test": "lab test/*.test.js -r console -v -L -t 60"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "cookies": "^0.5.0",
+    "eraro": "0.4.1",
     "lodash": "^3.10.0"
   },
   "devDependencies": {

@@ -1,3 +1,4 @@
 module.exports = {
-  'tokenkey': 'seneca-login'
+  'tokenkey': 'seneca-login',
+  framework: 'express'
 }
