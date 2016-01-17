@@ -19,7 +19,8 @@
     "LICENSE.txt",
     "README.md",
     "token-cookie.js",
-    "default-options.js"
+    "default-options.js",
+    "lib"
   ],
   "bugs": {
     "url": "https://github.com/mirceaalexandru/auth-token-cookie/issues"
