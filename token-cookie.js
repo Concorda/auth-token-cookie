@@ -2,45 +2,51 @@
 
 // external modules
 var _ = require('lodash')
-var Cookies = require('cookies')
 
 // default configuration
 var Default_options = require('./default-options.js')
 
+var error = require('eraro')({
+  package: 'auth-token-cookie'
+})
+
+
 module.exports = function (options) {
   var seneca = this
+  var internals = {}
+  internals.accepted_framworks = [
+    'express',
+    'hapi'
+  ]
+  internals.options = _.extend({}, Default_options, options || {})
 
-  options = _.extend({}, Default_options, options || {})
-
-  function set_token (args, cb) {
-    var tokenkey = args.tokenkey || options.tokenkey
-    var token = args.token
-    var res = this.fixedargs.res$
-    var req = this.fixedargs.req$
-
-    if (!res.seneca.cookies) {
-      res.seneca.cookies = new Cookies(req, res)
+  internals.choose_framework = function () {
+    if ('express' === internals.options.framework) {
+      internals.load_express_implementation()
     }
-
-    res.seneca.cookies.set(tokenkey, token)
-
-    cb(null, {token: token})
+    else {
+      internals.load_hapi_implementation()
+    }
   }
 
-
-  function get_token (args, cb) {
-    var tokenkey = args.tokenkey || options.tokenkey
-    var res = this.fixedargs.res$
-    var req = this.fixedargs.req$
-
-    if (!req.seneca.cookies) {
-      req.seneca.cookies = new Cookies(req, res)
+  internals.check_options = function () {
+    if (seneca.options().plugin.web && seneca.options().plugin.web.framework) {
+      options.framework = seneca.options().plugin.web.framework
     }
 
-    cb(null, {token: req.seneca.cookies.get(tokenkey)})
+    if (_.indexOf(internals.accepted_framworks, internals.options.framework) === -1) {
+      throw error('Framework type <' + internals.options.framework + '> not supported.')
+    }
   }
 
+  internals.load_express_implementation = function () {
+    seneca.use(require('./lib/express-token-cookie'), internals.options)
+  }
 
-  seneca.add({role: 'auth', set: 'token'}, set_token)
-  seneca.add({role: 'auth', get: 'token'}, get_token)
+  internals.load_hapi_implementation = function () {
+    seneca.use(require('./lib/hapi-token-cookie'), internals.options)
+  }
+
+  internals.check_options()
+  internals.choose_framework()
 }
