@@ -31,7 +31,7 @@ module.exports = function (options) {
 
   internals.check_options = function () {
     if (seneca.options().plugin.web && seneca.options().plugin.web.framework) {
-      options.framework = seneca.options().plugin.web.framework
+      internals.options.framework = seneca.options().plugin.web.framework
     }
 
     if (_.indexOf(internals.accepted_framworks, internals.options.framework) === -1) {
