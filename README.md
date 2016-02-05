@@ -39,11 +39,11 @@ Copyright (c) Mircea Alexandru and other contributors 2015, Licensed under [MIT]
 
 [npm-badge]: https://badge.fury.io/js/auth-token-cookie.svg
 [npm-url]: https://badge.fury.io/js/auth-token-cookie
-[david-badge]: https://david-dm.org/mirceaalexandru/auth-token-cookie.svg
-[david-url]: https://david-dm.org/mirceaalexandru/auth-token-cookie
+[david-badge]: https://david-dm.org/senecajs/auth-token-cookie.svg
+[david-url]: https://david-dm.org/senecajs/auth-token-cookie
 [gitter-badge]: https://badges.gitter.im/senecajs/seneca.png
 [gitter-url]: https://gitter.im/senecajs/seneca
-[travis-badge]: https://travis-ci.org/mirceaalexandru/auth-token-cookie.svg
-[travis-url]: https://travis-ci.org/mirceaalexandru/auth-token-cookie
+[travis-badge]: https://travis-ci.org/senecajs/auth-token-cookie.svg
+[travis-url]: https://travis-ci.org/senecajs/auth-token-cookie
 
 [MIT]: ./LICENSE
