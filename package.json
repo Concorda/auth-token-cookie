@@ -1,6 +1,6 @@
 {
   "name": "auth-token-cookie",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Seneca MODULE for storing auth token as cookie",
   "main": "token-cookie.js",
   "scripts": {
@@ -31,7 +31,7 @@
   "author": {
     "name": "Mircea Alexandru",
     "email": "mircea.alexandru@gmail.com",
-    "url": "https://github.com/mirceaalexandru"
+    "url": "http://alexandrumircea.ro"
   },
   "contributors": [
     {
