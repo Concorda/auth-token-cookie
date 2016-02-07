@@ -6,6 +6,9 @@ var _ = require('lodash')
 // default configuration
 var Default_options = require('./default-options.js')
 
+var HapiTokenCookie = require('./lib/hapi-token-cookie')
+var ExpressTokenCookie = require('./lib/express-token-cookie')
+
 var error = require('eraro')({
   package: 'auth-token-cookie'
 })
@@ -40,13 +43,23 @@ module.exports = function (options) {
   }
 
   internals.load_express_implementation = function () {
-    seneca.use(require('./lib/express-token-cookie'), internals.options)
+    seneca.use(ExpressTokenCookie, internals.options)
   }
 
   internals.load_hapi_implementation = function () {
-    seneca.use(require('./lib/hapi-token-cookie'), internals.options)
+    seneca.use(HapiTokenCookie, internals.options)
   }
 
-  internals.check_options()
-  internals.choose_framework()
+  function init(args, done){
+    internals.check_options()
+    internals.choose_framework()
+
+    done()
+  }
+
+  seneca.add('init: auth-token-cookie', init)
+
+  return {
+    name: 'auth-token-cookie'
+  }
 }
