@@ -8,6 +8,7 @@ var test = lab.test
 var Code = require('code')
 var expect = Code.expect
 
+
 suite('token-header suite set token tests', function () {
   test('simple test', function (done) {
     var si = require('seneca')()
@@ -60,7 +61,6 @@ suite('token-header suite set token tests', function () {
     })
   })
 })
-
 
 suite('token-header suite get token tests', function () {
   test('simple test', function (done) {
