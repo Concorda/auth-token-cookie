@@ -1,6 +1,6 @@
 {
   "name": "auth-token-cookie",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Seneca MODULE for storing auth token as cookie",
   "main": "token-cookie.js",
   "scripts": {
