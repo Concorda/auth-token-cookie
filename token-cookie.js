@@ -43,11 +43,11 @@ module.exports = function (options) {
   }
 
   internals.load_express_implementation = function () {
-    seneca.use(ExpressTokenCookie, internals.options)
+    ExpressTokenCookie(seneca, internals.options)
   }
 
   internals.load_hapi_implementation = function () {
-    seneca.use(HapiTokenCookie, internals.options)
+    HapiTokenCookie(seneca, internals.options)
   }
 
   function init (args, done) {
